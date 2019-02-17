@@ -1,0 +1,11 @@
+version: '2'
+services:
+  nginx:
+    build: .
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./etc/letsencrypt:/etc/letsencrypt
+      - ./default:/etc/nginx/sites-available/default
